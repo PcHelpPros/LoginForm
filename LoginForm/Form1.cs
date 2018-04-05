@@ -43,5 +43,10 @@ namespace LoginForm
                 Form2.ShowDialog(); // Opens Up The MOTD Form
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
