@@ -33,6 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginDatabaseDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDatabaseDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPortal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginPortal.Designer.cs">
+      <DependentUpon>LoginPortal.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginDatabaseDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UserRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRegistration.Designer.cs">
+      <DependentUpon>UserRegistration.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginPortal.resx">
+      <DependentUpon>LoginPortal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MOTD.resx">
       <DependentUpon>MOTD.cs</DependentUpon>
@@ -80,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserRegistration.resx">
+      <DependentUpon>UserRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LoginDatabaseDataSet1.xsc">
       <DependentUpon>LoginDatabaseDataSet1.xsd</DependentUpon>
     </None>
@@ -90,6 +106,17 @@
     </None>
     <None Include="LoginDatabaseDataSet1.xss">
       <DependentUpon>LoginDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LoginDatabaseDataSet11.xsc">
+      <DependentUpon>LoginDatabaseDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="LoginDatabaseDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginDatabaseDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoginDatabaseDataSet11.xss">
+      <DependentUpon>LoginDatabaseDataSet11.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

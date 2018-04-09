@@ -1,6 +1,6 @@
 ﻿namespace LoginForm
 {
-    partial class Form1
+    partial class LoginPortal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPortal));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -36,9 +36,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.reMeCheckBox = new System.Windows.Forms.CheckBox();
-            this.Register_Link_Label = new System.Windows.Forms.LinkLabel();
             this.LoginButton = new System.Windows.Forms.Button();
             this.MotdButton = new System.Windows.Forms.Button();
+            this.registerButton1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -106,17 +106,6 @@
             this.reMeCheckBox.UseVisualStyleBackColor = true;
             this.reMeCheckBox.CheckedChanged += new System.EventHandler(this.reMeCheckBox_CheckedChanged);
             // 
-            // Register_Link_Label
-            // 
-            this.Register_Link_Label.AutoSize = true;
-            this.Register_Link_Label.Location = new System.Drawing.Point(25, 173);
-            this.Register_Link_Label.Name = "Register_Link_Label";
-            this.Register_Link_Label.Size = new System.Drawing.Size(49, 13);
-            this.Register_Link_Label.TabIndex = 7;
-            this.Register_Link_Label.TabStop = true;
-            this.Register_Link_Label.Text = "Register!";
-            this.Register_Link_Label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Register_Link_Label_LinkClicked);
-            // 
             // LoginButton
             // 
             this.LoginButton.Image = ((System.Drawing.Image)(resources.GetObject("LoginButton.Image")));
@@ -142,14 +131,24 @@
             this.MotdButton.UseVisualStyleBackColor = true;
             this.MotdButton.Click += new System.EventHandler(this.MotdButton_Click);
             // 
-            // Form1
+            // registerButton1
+            // 
+            this.registerButton1.Location = new System.Drawing.Point(28, 168);
+            this.registerButton1.Name = "registerButton1";
+            this.registerButton1.Size = new System.Drawing.Size(75, 23);
+            this.registerButton1.TabIndex = 10;
+            this.registerButton1.Text = "Register!";
+            this.registerButton1.UseVisualStyleBackColor = true;
+            this.registerButton1.Click += new System.EventHandler(this.registerButton1_Click);
+            // 
+            // LoginPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 195);
+            this.Controls.Add(this.registerButton1);
             this.Controls.Add(this.MotdButton);
             this.Controls.Add(this.LoginButton);
-            this.Controls.Add(this.Register_Link_Label);
             this.Controls.Add(this.reMeCheckBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -159,8 +158,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "LoginPortal";
             this.Text = "User Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -177,9 +177,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox reMeCheckBox;
-        private System.Windows.Forms.LinkLabel Register_Link_Label;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button MotdButton;
+        private System.Windows.Forms.Button registerButton1;
     }
 }
 

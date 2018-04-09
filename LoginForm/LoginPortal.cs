@@ -12,19 +12,13 @@ using System.Windows.Forms;
 
 namespace LoginForm
 {
-    public partial class Form1 : Form
+    public partial class LoginPortal : Form
     {
-        public Form1()
+        public LoginPortal()
         {
             InitializeComponent();
         }
-
-        private void Register_Link_Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ProcessStartInfo sInfo = new ProcessStartInfo("http://www.google.com");
-            Process.Start(sInfo);
-        }
-
+                
         private void reMeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -42,7 +36,7 @@ namespace LoginForm
                         if (dt.Rows[0][0].ToString() == "1")
                         {
                             this.Hide(); // Hide The Login Form Once Login Is Successful.
-                            new MOTD().Show(); // Displays The Next Form Called Home. 
+                             
                         }
                         else
                             MessageBox.Show("Invalid username or password");
@@ -73,6 +67,15 @@ namespace LoginForm
         {
 
         }
-            
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registerButton1_Click(object sender, EventArgs e)
+        {
+            new UserRegistration().Show(); // Displays The Registration Form
+        }
     }
 }
