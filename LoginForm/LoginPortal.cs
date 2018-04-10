@@ -53,15 +53,7 @@ namespace LoginForm
                 }
             
 
-                    private void MotdButton_Click(object sender, EventArgs e)
-        {
-            // On Clicking MOTD Button In Login Form 
-            // MOTD Form Will Open Up
-            {
-                MOTD Form2 = new MOTD();
-                Form2.ShowDialog(); // Opens Up The MOTD Form
-            }
-        }
+             
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -75,7 +67,7 @@ namespace LoginForm
 
         private void registerButton1_Click(object sender, EventArgs e)
         {
-            new UserRegistration().Show(); // Displays The Registration Form
+            new Registration().Show();
         }
     }
 }
