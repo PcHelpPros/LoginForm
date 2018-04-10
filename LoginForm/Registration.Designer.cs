@@ -56,6 +56,61 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(18, 45);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(60, 13);
+            firstNameLabel.TabIndex = 1;
+            firstNameLabel.Text = "First Name:";
+            // 
+            // lastNameLabel
+            // 
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new System.Drawing.Point(18, 80);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new System.Drawing.Size(61, 13);
+            lastNameLabel.TabIndex = 2;
+            lastNameLabel.Text = "Last Name:";
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Location = new System.Drawing.Point(21, 115);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new System.Drawing.Size(58, 13);
+            usernameLabel.TabIndex = 4;
+            usernameLabel.Text = "Username:";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(23, 150);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(56, 13);
+            passwordLabel.TabIndex = 6;
+            passwordLabel.Text = "Password:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(3, 220);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(76, 13);
+            emailLabel.TabIndex = 8;
+            emailLabel.Text = "Email Address:";
+            // 
+            // phoneNumLabel
+            // 
+            phoneNumLabel.AutoSize = true;
+            phoneNumLabel.Location = new System.Drawing.Point(-2, 185);
+            phoneNumLabel.Name = "phoneNumLabel";
+            phoneNumLabel.Size = new System.Drawing.Size(81, 13);
+            phoneNumLabel.TabIndex = 10;
+            phoneNumLabel.Text = "Phone Number:";
+            phoneNumLabel.Click += new System.EventHandler(this.phoneNumLabel_Click);
+            // 
             // loginFormTable
             // 
             this.loginFormTable.DataSetName = "LoginFormTable";
@@ -76,15 +131,6 @@
             this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
             this.tableAdapterManager.UpdateOrder = LoginForm.LoginFormTableTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(18, 45);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(60, 13);
-            firstNameLabel.TabIndex = 1;
-            firstNameLabel.Text = "First Name:";
-            // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "FirstName", true));
@@ -92,15 +138,6 @@
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(161, 20);
             this.firstNameTextBox.TabIndex = 2;
-            // 
-            // lastNameLabel
-            // 
-            lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(18, 80);
-            lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(61, 13);
-            lastNameLabel.TabIndex = 2;
-            lastNameLabel.Text = "Last Name:";
             // 
             // lastNameTextBox
             // 
@@ -110,15 +147,6 @@
             this.lastNameTextBox.Size = new System.Drawing.Size(161, 20);
             this.lastNameTextBox.TabIndex = 3;
             // 
-            // usernameLabel
-            // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Location = new System.Drawing.Point(21, 115);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new System.Drawing.Size(58, 13);
-            usernameLabel.TabIndex = 4;
-            usernameLabel.Text = "Username:";
-            // 
             // usernameTextBox
             // 
             this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Username", true));
@@ -126,15 +154,6 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(161, 20);
             this.usernameTextBox.TabIndex = 5;
-            // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(23, 150);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(56, 13);
-            passwordLabel.TabIndex = 6;
-            passwordLabel.Text = "Password:";
             // 
             // passwordTextBox
             // 
@@ -144,15 +163,6 @@
             this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
             this.passwordTextBox.TabIndex = 7;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(3, 220);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(76, 13);
-            emailLabel.TabIndex = 8;
-            emailLabel.Text = "Email Address:";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Email", true));
@@ -160,15 +170,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(161, 20);
             this.emailTextBox.TabIndex = 9;
-            // 
-            // phoneNumLabel
-            // 
-            phoneNumLabel.AutoSize = true;
-            phoneNumLabel.Location = new System.Drawing.Point(13, 185);
-            phoneNumLabel.Name = "phoneNumLabel";
-            phoneNumLabel.Size = new System.Drawing.Size(66, 13);
-            phoneNumLabel.TabIndex = 10;
-            phoneNumLabel.Text = "Phone Num:";
             // 
             // phoneNumTextBox
             // 

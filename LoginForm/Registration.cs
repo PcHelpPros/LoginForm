@@ -71,5 +71,10 @@ namespace LoginForm
             }           
             
         }
+
+        private void phoneNumLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

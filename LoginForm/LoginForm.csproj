@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginFormTable.cs">
+      <DependentUpon>LoginFormTable.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginFormTable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
