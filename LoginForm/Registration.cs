@@ -38,36 +38,43 @@ namespace LoginForm
         {                
                     string connetionString = null;
                     connetionString = @"Data Source=THANATOS\SQLEXPRESS01;Initial Catalog=LoginDatabase;Integrated Security=True";
-                    SqlConnection cnn = new SqlConnection(connetionString);
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = cnn;           
+                    //SqlConnection cnn = new SqlConnection(connetionString);
+                    //SqlCommand cmd = new SqlCommand();
+                    //cmd.Connection = cnn;           
                 try
             {
                 using (SqlConnection connection = new SqlConnection(connetionString))
                 {
-                    String query = "INSERT INTO dbo.Table (FirstName,LastName,Username,Password,Email,PhoneNum) VALUES (@FirstName,@LastName,@Username,@Password,@Email,@PhoneNum)";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    if (connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+                    String query = "INSERT INTO dbo.[Table] (FirstName,LastName,Username,Password,Email,PhoneNum) VALUES (@FirstName,@LastName,@Username,@Password,@Email,@PhoneNum)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         
-                        int result = command.ExecuteNonQuery();
-                        cnn.Open();
+                        
+                        //cnn.Open();
 
-                cmd.Parameters.AddWithValue("@FirstName", "firstNameTextBox.Text");
-                cmd.Parameters.AddWithValue("@LastName", "lastNameTextBox.Text");
-                cmd.Parameters.AddWithValue("@Username", "usernameTextBox.Text");
-                cmd.Parameters.AddWithValue("@Password", "passwordTextBox.Text");
-                cmd.Parameters.AddWithValue("@Email", "emailTextBox.Text");
-                cmd.Parameters.AddWithValue("@PhoneNum", "phoneNumTextBox.Text");                
+                cmd.Parameters.AddWithValue("@FirstName", firstNameTextBox.Text);
+                cmd.Parameters.AddWithValue("@LastName", lastNameTextBox.Text);
+                cmd.Parameters.AddWithValue("@Username", usernameTextBox.Text);
+                cmd.Parameters.AddWithValue("@Password", passwordTextBox.Text);
+                cmd.Parameters.AddWithValue("@Email", emailTextBox.Text);
+                cmd.Parameters.AddWithValue("@PhoneNum", phoneNumTextBox.Text);
 
-                // Check Error
-                if (result < 0)
+                        int result = cmd.ExecuteNonQuery();
+
+                        // Check Error
+                        if (result < 0)
                     Console.WriteLine("Error inserting data into Database!");
                 }
                 }
             }
-            finally
+            catch(Exception ex)
             {
-                cnn.Close();
+               string v = ex.Message;
+             throw ex;   
             }           
             
         }
