@@ -30,15 +30,17 @@ namespace LoginForm
                 // making connection
                     try
                     {
+                    // Connection string for linking back to the database.
                         SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM dbo.[Table] WHERE Username='" + textBox1.Text + "' AND Password='" + textBox2.Text + "'", con);
                         DataTable dt = new DataTable(); //this is creating a virtual table  
                         sda.Fill(dt);
                         if (dt.Rows[0][0].ToString() == "1")
                         {
-                            this.Hide(); // Hide The Login Form Once Login Is Successful.
+                            this.Hide(); // Hide this form once login is successful.
                              
                         }
                         else
+                        // If login is not successful, show error message.
                             MessageBox.Show("Invalid username or password");
 
                     }
@@ -50,7 +52,7 @@ namespace LoginForm
                 }
                 finally
                     {
-                        if (con.State == ConnectionState.Open)
+                        if (con.State == ConnectionState.Open) // garbage cleanup closing connections.
                         {
                             con.Close();
                         }
@@ -73,7 +75,7 @@ namespace LoginForm
 
         private void registerButton1_Click(object sender, EventArgs e)
         {
-            new Registration().Show();
+            new Registration().Show(); //opens up the registration form when button is clicked.
         }
     }
 }

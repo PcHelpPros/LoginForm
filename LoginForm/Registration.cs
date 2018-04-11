@@ -45,7 +45,7 @@ namespace LoginForm
             {
                 using (SqlConnection connection = new SqlConnection(connetionString))
                 {
-                    if (connection.State == ConnectionState.Closed)
+                    if (connection.State == ConnectionState.Closed) // Checking connection status, if closed then open.
                     {
                         connection.Open();
                     }
@@ -56,18 +56,18 @@ namespace LoginForm
 
                         //cnn.Open();
 
-                        cmd.Parameters.AddWithValue("@FirstName", firstNameTextBox.Text);
-                        cmd.Parameters.AddWithValue("@LastName", lastNameTextBox.Text);
-                        cmd.Parameters.AddWithValue("@Username", usernameTextBox.Text);
-                        cmd.Parameters.AddWithValue("@Password", passwordTextBox.Text);
-                        cmd.Parameters.AddWithValue("@Email", emailTextBox.Text);
-                        cmd.Parameters.AddWithValue("@PhoneNum", phoneNumTextBox.Text);
+                        cmd.Parameters.AddWithValue("@FirstName", firstNameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
+                        cmd.Parameters.AddWithValue("@LastName", lastNameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
+                        cmd.Parameters.AddWithValue("@Username", usernameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
+                        cmd.Parameters.AddWithValue("@Password", passwordTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
+                        cmd.Parameters.AddWithValue("@Email", emailTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
+                        cmd.Parameters.AddWithValue("@PhoneNum", phoneNumTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
 
                         int result = cmd.ExecuteNonQuery();
 
                         // Check Error
                         if (result < 0)
-                            Console.WriteLine("Error inserting data into Database!");
+                            Console.WriteLine("Error inserting data into Database!"); // If error, display message.
                     }
                 }
             }
