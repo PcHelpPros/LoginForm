@@ -52,7 +52,7 @@ namespace LoginForm
                 }
                 finally
                 {
-                    if (con.State == ConnectionState.Open) // garbage cleanup closing connections.
+                    if (con.State == ConnectionState.Open) // garbage cleanup closing connections
                     {
                         con.Close();
                     }

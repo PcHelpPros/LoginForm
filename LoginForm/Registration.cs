@@ -37,10 +37,7 @@ namespace LoginForm
         private void registerButton_Click(object sender, EventArgs e)
         {
             string connetionString = null;
-            connetionString = @"Data Source=THANATOS\SQLEXPRESS01;Initial Catalog=LoginDatabase;Integrated Security=True";
-            //SqlConnection cnn = new SqlConnection(connetionString);
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = cnn;           
+            connetionString = @"Data Source=THANATOS\SQLEXPRESS01;Initial Catalog=LoginDatabase;Integrated Security=True";                       
             try
             {
                 using (SqlConnection connection = new SqlConnection(connetionString))
