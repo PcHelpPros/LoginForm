@@ -39,13 +39,13 @@
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableTableAdapter = new LoginForm.LoginFormTableTableAdapters.TableTableAdapter();
             this.tableAdapterManager = new LoginForm.LoginFormTableTableAdapters.TableAdapterManager();
+            this.registerButton = new System.Windows.Forms.Button();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumTextBox = new System.Windows.Forms.TextBox();
-            this.registerButton = new System.Windows.Forms.Button();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             usernameLabel = new System.Windows.Forms.Label();
@@ -131,54 +131,6 @@
             this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
             this.tableAdapterManager.UpdateOrder = LoginForm.LoginFormTableTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // firstNameTextBox
-            // 
-            this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "FirstName", true));
-            this.firstNameTextBox.Location = new System.Drawing.Point(85, 42);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(161, 20);
-            this.firstNameTextBox.TabIndex = 2;
-            // 
-            // lastNameTextBox
-            // 
-            this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(85, 77);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(161, 20);
-            this.lastNameTextBox.TabIndex = 3;
-            // 
-            // usernameTextBox
-            // 
-            this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Username", true));
-            this.usernameTextBox.Location = new System.Drawing.Point(85, 112);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(161, 20);
-            this.usernameTextBox.TabIndex = 5;
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(85, 147);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
-            this.passwordTextBox.TabIndex = 7;
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(85, 217);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(161, 20);
-            this.emailTextBox.TabIndex = 9;
-            // 
-            // phoneNumTextBox
-            // 
-            this.phoneNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "PhoneNum", true));
-            this.phoneNumTextBox.Location = new System.Drawing.Point(85, 182);
-            this.phoneNumTextBox.Name = "phoneNumTextBox";
-            this.phoneNumTextBox.Size = new System.Drawing.Size(161, 20);
-            this.phoneNumTextBox.TabIndex = 11;
-            // 
             // registerButton
             // 
             this.registerButton.Location = new System.Drawing.Point(103, 256);
@@ -189,24 +141,66 @@
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
+            // firstNameTextBox
+            // 
+            this.firstNameTextBox.Location = new System.Drawing.Point(85, 42);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.firstNameTextBox.TabIndex = 13;
+            // 
+            // lastNameTextBox
+            // 
+            this.lastNameTextBox.Location = new System.Drawing.Point(85, 77);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.lastNameTextBox.TabIndex = 14;
+            // 
+            // usernameTextBox
+            // 
+            this.usernameTextBox.Location = new System.Drawing.Point(85, 112);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.usernameTextBox.TabIndex = 15;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(85, 147);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(158, 20);
+            this.passwordTextBox.TabIndex = 16;
+            // 
+            // phoneNumTextBox
+            // 
+            this.phoneNumTextBox.Location = new System.Drawing.Point(85, 185);
+            this.phoneNumTextBox.Name = "phoneNumTextBox";
+            this.phoneNumTextBox.Size = new System.Drawing.Size(158, 20);
+            this.phoneNumTextBox.TabIndex = 17;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.Location = new System.Drawing.Point(85, 220);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(158, 20);
+            this.emailTextBox.TabIndex = 18;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 300);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.phoneNumTextBox);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(this.lastNameTextBox);
+            this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(phoneNumLabel);
-            this.Controls.Add(this.phoneNumTextBox);
             this.Controls.Add(emailLabel);
-            this.Controls.Add(this.emailTextBox);
             this.Controls.Add(passwordLabel);
-            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(usernameLabel);
-            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(lastNameLabel);
-            this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(firstNameLabel);
-            this.Controls.Add(this.firstNameTextBox);
             this.Name = "Registration";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
@@ -223,12 +217,12 @@
         private System.Windows.Forms.BindingSource tableBindingSource;
         private LoginFormTableTableAdapters.TableTableAdapter tableTableAdapter;
         private LoginFormTableTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox phoneNumTextBox;
-        private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.TextBox emailTextBox;
     }
 }

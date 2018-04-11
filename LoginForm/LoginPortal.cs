@@ -30,7 +30,7 @@ namespace LoginForm
                 // making connection
                     try
                     {
-                        SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM UserAlias WHERE UserName='" + textBox1.Text + "' AND Password='" + textBox2.Text + "'", con);
+                        SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM dbo.[Table] WHERE Username='" + textBox1.Text + "' AND Password='" + textBox2.Text + "'", con);
                         DataTable dt = new DataTable(); //this is creating a virtual table  
                         sda.Fill(dt);
                         if (dt.Rows[0][0].ToString() == "1")
@@ -42,7 +42,13 @@ namespace LoginForm
                             MessageBox.Show("Invalid username or password");
 
                     }
-                    finally
+
+                catch (Exception ex)
+                {
+                    string v = ex.Message;
+                    throw ex;
+                }
+                finally
                     {
                         if (con.State == ConnectionState.Open)
                         {
