@@ -35,6 +35,7 @@
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label phoneNumLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.loginFormTable = new LoginForm.LoginFormTable();
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableTableAdapter = new LoginForm.LoginFormTableTableAdapters.TableTableAdapter();
@@ -168,6 +169,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(158, 20);
             this.passwordTextBox.TabIndex = 16;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // phoneNumTextBox
             // 
@@ -201,6 +203,7 @@
             this.Controls.Add(usernameLabel);
             this.Controls.Add(lastNameLabel);
             this.Controls.Add(firstNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registration";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);

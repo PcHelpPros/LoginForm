@@ -45,13 +45,11 @@ namespace LoginForm
                     if (connection.State == ConnectionState.Closed) // Checking connection status, if closed then open.
                     {
                         connection.Open();
+                        this.Hide();
                     }
                     String query = "INSERT INTO dbo.[Table] (FirstName,LastName,Username,Password,Email,PhoneNum) VALUES (@FirstName,@LastName,@Username,@Password,@Email,@PhoneNum)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-
-
-                        //cnn.Open();
+                    {                       
 
                         cmd.Parameters.AddWithValue("@FirstName", firstNameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
                         cmd.Parameters.AddWithValue("@LastName", lastNameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
@@ -64,7 +62,7 @@ namespace LoginForm
 
                         // Check Error
                         if (result < 0)
-                            Console.WriteLine("Error inserting data into Database!"); // If error, display message.
+                            MessageBox.Show("Error inserting data into Database!"); // If error, display message.
                     }
                 }
             }
