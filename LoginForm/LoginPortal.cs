@@ -76,6 +76,14 @@ namespace LoginForm
         private void registerButton1_Click(object sender, EventArgs e)
         {
             new Registration().Show(); //opens up the registration form when button is clicked.
+            try
+            {
+
+            }
+            catch (System.Exception ex)
+            {
+            	    
+            }
         }
     }
 }
