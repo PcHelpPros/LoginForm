@@ -35,48 +35,36 @@ namespace LoginForm
         }
 
         private void registerButton_Click(object sender, EventArgs e)
-        {
-            string connetionString = null;
-            connetionString = @"Data Source=THANATOS\SQLEXPRESS01;Initial Catalog=LoginDatabase;Integrated Security=True";
-            //SqlConnection cnn = new SqlConnection(connetionString);
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = cnn;           
-            try
+        {                
+                    string connetionString = null;
+                    connetionString = @"Data Source=THANATOS\SQLEXPRESS01;Initial Catalog=LoginDatabase;Integrated Security=True";
+                    SqlConnection cnn = new SqlConnection(connetionString);
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = cnn;           
+                try
             {
                 using (SqlConnection connection = new SqlConnection(connetionString))
                 {
-                    if (connection.State == ConnectionState.Closed) // Checking connection status, if closed then open.
+                    String query = "INSERT INTO dbo.Table (FirstName,LastName,Username,Password,Email,PhoneNum) VALUES (@FirstName,@LastName,@Username,@Password,@Email,@PhoneNum)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        connection.Open();
-                    }
-                    String query = "INSERT INTO dbo.[Table] (FirstName,LastName,Username,Password,Email,PhoneNum) VALUES (@FirstName,@LastName,@Username,@Password,@Email,@PhoneNum)";
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-
-
-                        //cnn.Open();
-
-                        cmd.Parameters.AddWithValue("@FirstName", firstNameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
-                        cmd.Parameters.AddWithValue("@LastName", lastNameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
-                        cmd.Parameters.AddWithValue("@Username", usernameTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
-                        cmd.Parameters.AddWithValue("@Password", passwordTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
-                        cmd.Parameters.AddWithValue("@Email", emailTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
-                        cmd.Parameters.AddWithValue("@PhoneNum", phoneNumTextBox.Text); // Syntax @"TableColumnName", TextBoxToGrabInfoFrom.Text
+                        
+                        int result = command.ExecuteNonQuery();
+                        cnn.Open();
 
                         int result = cmd.ExecuteNonQuery();
 
-                        // Check Error
-                        if (result < 0)
-                            Console.WriteLine("Error inserting data into Database!"); // If error, display message.
-                    }
+                // Check Error
+                if (result < 0)
+                    Console.WriteLine("Error inserting data into Database!");
+                }
                 }
             }
-            catch (Exception ex)
+            finally
             {
-                string v = ex.Message;
-                throw ex;
-            }
-
+                cnn.Close();
+            }           
+            
         }
 
         private void phoneNumLabel_Click(object sender, EventArgs e)
